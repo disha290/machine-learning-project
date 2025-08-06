@@ -7,7 +7,7 @@ import joblib
 st.markdown("""
     <style>
         body {
-            background-image: url("https://github.com/disha290/machine-learning-project/blob/main/loanpicture.jpg");
+            background-image: url("loanpicture.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
