@@ -44,7 +44,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-set_background("loanpicture.jpg")
+
 # Load the saved model and scaler
 model = joblib.load('loan_approval_model.pkl')
 scaler = joblib.load('scaler.pkl')
