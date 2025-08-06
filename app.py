@@ -2,47 +2,55 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import streamlit as st
+import base64
 
-# ✅ CUSTOM STYLING WITH BACKGROUND IMAGE 
-st.markdown("""
-    <style>
-        .stApp {
-            background-image: url("https://github.com/disha290/machine-learning-project/blob/main/loanpicture.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+# ✅ CUSTOM STYLING WITH BACKGROUND IMAGE
+def set_bg_from_local(image_path):
+    with open(image_path, "rb") as img_file:
+        data = base64.b64encode(img_file.read()).decode()
+    st.markdown(f'''
+        <style>
+            .stApp {{
+                background-image: url("data:image/png;base64,{data}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
 
-        .main {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
-        }
+            .main {
+                background-color: rgba(255, 255, 255, 0.85);
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
+            }
+    
+            .stButton>button {
+                color: white;
+                background-color: #0066cc;
+                border-radius: 8px;
+                padding: 10px 24px;
+            }
 
-        .stButton>button {
-            color: white;
-            background-color: #0066cc;
-            border-radius: 8px;
-            padding: 10px 24px;
-        }
-
-        .stButton>button:hover {
-            background-color: #004d99;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            color: #003366;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #333333;
-        }
-    </style>
-""", unsafe_allow_html=True)
+            .stButton>button:hover {
+                background-color: #004d99;
+            }
+    
+            .title {
+                font-size: 36px;
+                font-weight: bold;
+                color: #003366;
+            }
+    
+            .subtitle {
+                font-size: 18px;
+                color: #333333;
+            }
+        </style>
+    ''',
+        unsafe_allow_html=True
+    )
+set_bg_from_local("loanpicture.jpg")    
 
 
 # Load the saved model and scaler
