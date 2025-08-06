@@ -7,7 +7,7 @@ import joblib
 st.markdown("""
     <style>
         body {
-            background-image: url("https://raw.githubusercontent.com/leonadsouza28/Machine-Learning-Project/main/LP%20image.jpeg");
+            background-image: url("https://github.com/disha290/machine-learning-project/blob/main/loanpicture.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -74,7 +74,7 @@ Property_Area = st.selectbox("Property Area", [' ','Urban', 'Semiurban', 'Rural'
 # Prepare input for prediction
 if st.button("Predict Loan Approval"):
     if ' ' in [Gender, Married, Dependents, Education, Self_Employed, LoanAmount, Loan_Amount_Term, Credit_History, Property_Area]:
-        st.warning("⚠️ Please fill in all fields before predicting.")
+        st.warning("⚠ Please fill in all fields before predicting.")
     else:
         # Convert input into DataFrame
         input_data = pd.DataFrame({
