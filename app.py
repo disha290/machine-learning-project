@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# ✅ CUSTOM STYLING WITH BACKGROUND IMAGE
+# ✅ CUSTOM STYLING WITH BACKGROUND IMAGE 
 st.markdown("""
     <style>
-        body {
+        .stApp {
             background-image: url("https://github.com/disha290/machine-learning-project/blob/main/loanpicture.jpg");
             background-size: cover;
             background-repeat: no-repeat;
