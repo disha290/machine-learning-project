@@ -9,10 +9,10 @@ import base64
 def set_bg_from_local(image_path):
     with open(image_path, "rb") as img_file:
         data = base64.b64encode(img_file.read()).decode()
-    st.markdown(f'''
+    st.markdown("""
         <style>
             .stApp {{
-                background-image: url("data:image/png;base64,{data}");
+                background-image: url("data:image/png;base64");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -47,7 +47,7 @@ def set_bg_from_local(image_path):
                 color: #333333;
             }
         </style>
-    ''',
+    """,
         unsafe_allow_html=True
     )
 set_bg_from_local("loanpicture.jpg")    
